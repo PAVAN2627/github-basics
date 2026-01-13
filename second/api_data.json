@@ -1,5 +1,4 @@
 {
-  "status": "success",
-  "message": "API is working",
-  "version": 1
+  "status": "updated",
+  "version": 2
 }
