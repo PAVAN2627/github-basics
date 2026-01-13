@@ -35,6 +35,9 @@ def api():
     with open("second/api_data.json") as f:
         data = json.load(f)
     return jsonify(data)
+@app.route("/todo")
+def todo():
+    return render_template("todo.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
