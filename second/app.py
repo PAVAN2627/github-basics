@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
+import json
 from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
@@ -29,6 +30,11 @@ def form():
 @app.route("/success")
 def success():
     return render_template("success.html")
+@app.route("/api")
+def api():
+    with open("second/api_data.json") as f:
+        data = json.load(f)
+    return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
